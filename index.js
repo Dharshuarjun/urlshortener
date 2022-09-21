@@ -60,7 +60,7 @@ if(err) throw err;
 res.redirect("/")
     })
 })
-app.listen(3000,function(){
+app.listen(process.env.PORT||3000,function(){
     console.log("port is running in 3000")
 });
 

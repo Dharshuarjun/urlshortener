@@ -2,6 +2,8 @@ const express=require("express");
 const app=express();
 const bodyParser=require("body-parser");
 const mongoose=require("mongoose");
+var PORT=process.env.PORT ||5000;
+require('dotenv').config();
 
 mongoose.connect("mongodb://localhost:27017/myURLShortener");
 const{UrlModel}=require("./models/urlshort")
@@ -58,7 +60,7 @@ if(err) throw err;
 res.redirect("/")
     })
 })
-app.listen(3000,function(){
+app.listen(PORT||3000,function(){
     console.log("port is running in 3000")
 });
 

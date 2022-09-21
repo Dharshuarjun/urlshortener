@@ -2,8 +2,8 @@ const express=require("express");
 const app=express();
 const bodyParser=require("body-parser");
 const mongoose=require("mongoose");
-// var PORT=process.env.PORT ||5000;
-// require('dotenv').config();
+var PORT=process.env.PORT ||3000;
+require('dotenv').config();
 
 mongoose.connect("mongodb://localhost:27017/myURLShortener");
 const{UrlModel}=require("./models/urlshort")

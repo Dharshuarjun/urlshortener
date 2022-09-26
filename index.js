@@ -5,7 +5,7 @@ const mongoose=require("mongoose");
 var PORT=process.env.PORT ||3000;
 require('dotenv').config();
 
-mongoose.connect("mongodb://localhost:27017/myURLShortener");
+mongoose.connect("mongodb+srv://user:user123@cluster0.sqxqufd.mongodb.net/urlshortener?retryWrites=true&w=majority");
 const{UrlModel}=require("./models/urlshort")
 //Middleware
 app.use(express.static("public"));
@@ -60,9 +60,7 @@ if(err) throw err;
 res.redirect("/")
     })
 })
-app.listen(process.env.PORT||3000,function(){
-    console.log("port is running in 3000")
-});
+
 
 function generateUrl(){
     var rndResult="";
@@ -77,3 +75,6 @@ function generateUrl(){
     console.log(rndResult)
     return rndResult
 }
+app.listen(process.env.PORT||3000,function(){
+    console.log("port is running in 3000")
+});

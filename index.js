@@ -24,9 +24,6 @@ app.get("/",function(req,res){
 });
 
 app.post("/create",function(req,res){
-    
-    //create a short url
-    
     let urlShort=new UrlModel({
         longUrl:req.body.longurl,
         shortUrl:generateUrl()
@@ -60,7 +57,6 @@ if(err) throw err;
 res.redirect("/")
     })
 })
-
 
 function generateUrl(){
     var rndResult="";

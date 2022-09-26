@@ -5,7 +5,7 @@ const mongoose=require("mongoose");
 var PORT=process.env.PORT ||3000;
 require('dotenv').config();
 
-mongoose.connect(process.env.DB);
+mongoose.connect("mongodb+srv://user:user123@cluster0.sqxqufd.mongodb.net/urlshortener?retryWrites=true&w=majority");
 const{UrlModel}=require("./models/urlshort")
 //Middleware
 app.use(express.static("public"));
